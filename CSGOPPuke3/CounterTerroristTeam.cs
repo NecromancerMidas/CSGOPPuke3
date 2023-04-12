@@ -10,6 +10,7 @@ namespace CSGOPPuke3
     {
         private List<Player> _counterTerrorists;
         private int _killChance = 7;
+        private int _defusingTime = 5;
         public CounterTerroristTeam()
         {
             _counterTerrorists = new List<Player>
@@ -65,16 +66,26 @@ namespace CSGOPPuke3
                 {
                     DefuseBomb();
                 }
-                KillTerrorist(tTeam);
+                else KillTerrorist(tTeam);
             }
             else KillTerrorist(tTeam);
         }
 
         public void DefuseBomb()
         {
-            Console.WriteLine("bomb defuse wow CT WINS!");
-            Environment.Exit(0);
-
+            
+            {
+                _defusingTime--;
+                if (_defusingTime == 0)
+                {
+                    Console.WriteLine("bomb defuse wow CT WINS!");
+                    Environment.Exit(0);
+                    return;
+                }
+                Console.WriteLine(@$"ct are defusing the bomb, {_defusingTime} seconds left.
+");
+            }
+            
         }
     }
 }

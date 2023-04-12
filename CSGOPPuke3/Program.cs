@@ -6,7 +6,7 @@ namespace CSGOPPuke3
         
         static void Main(string[] args)
         {
-            var ms = 1000;
+            var ms = 500;
             var ctTeam = new CounterTerroristTeam();
             var terroristTeam = new TerroristTeam();
 

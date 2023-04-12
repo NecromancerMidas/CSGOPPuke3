@@ -11,7 +11,7 @@ namespace CSGOPPuke3
         private List<Player> _terrorists;
         private bool _attemptKill;
         private bool _foundBombsite;
-        private int _planting = 5;
+        private int _plantingTime = 5;
         public bool BombIsPlanted { get; private set; }
 
         public TerroristTeam()
@@ -60,15 +60,15 @@ namespace CSGOPPuke3
 
         public void PlantBomb()
         {
-            _planting--;
-            if (_planting == 0)
+            _plantingTime--;
+            if (_plantingTime == 0)
             {
                 BombIsPlanted = true;
                 Console.WriteLine(@"Terrorist's planted bomb at A.
 ");
                 return;
             }
-            Console.WriteLine(@$"terrorists are planting the bomb, {_planting} seconds left.
+            Console.WriteLine(@$"terrorists are planting the bomb, {_plantingTime} seconds left.
 ");
         }
 
